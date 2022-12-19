@@ -1,0 +1,61 @@
+.body__profilecards {
+  background-image: url('../../images/background-3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left 15% bottom 45%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.main {
+  @media all and (min-width: 768px) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    min-height: 75vh;
+  }
+
+  @media all and (min-width: 1024px) {
+    justify-content: flex-end;
+  }
+
+  &__form {
+    @media all and (min-width: 768px) {
+      width: 399px;
+    }
+  }
+}
+
+.legend {
+  &__icon {
+    font-size: rem(18);
+    color: $amazon;
+    padding-right: 10px;
+  }
+}
+
+.line {
+  border-bottom: solid 1px $amazon;
+  padding-top: 10px;
+  width: 100%;
+}
+
+.arrow-up {
+  transform: rotate(180deg);
+}
+
+.arrow-down {
+  transform: none;
+}
+
+.fill__arrow {
+  height: 27px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+//esto cierra y abre las pestañas
+
+.collapsed {
+  display: none;
+}

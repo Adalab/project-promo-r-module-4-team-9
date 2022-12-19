@@ -1,0 +1,117 @@
+.share {
+  padding: 0 20px 30px 20px;
+
+  @media all and (min-width: 768px) {
+    padding: 0 30px 30px 40px;
+  }
+
+  &__wrap1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 10px;
+    cursor: pointer;
+
+    &--legend {
+      display: flex;
+      flex-direction: row;
+      font-family: $font-family-opensans;
+      font-size: rem(18);
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $color-gunmetal;
+    }
+  }
+
+  &__wrap2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    &--button {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-family: $font-family-opensans;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      color: $color-white;
+      background-color: $amazon;
+      border-radius: 12px;
+      border: none;
+      padding: 13px 18px 13px 18px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      cursor: pointer;
+    }
+
+    &--errormessage {
+      color: $color-gunmetal;
+      font-family: $font-family-opensans;
+      font-weight: 600;
+    }
+
+    &__card {
+      padding-right: 9px;
+    }
+  }
+
+  &__wrap3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+
+    &--h3 {
+      color: $color-gunmetal;
+      font-family: $font-family-opensans;
+      font-weight: 600;
+    }
+
+    &--link {
+      font-family: $font-family-opensans;
+      font-weight: 700;
+      text-align: center;
+      font-size: rem(12);
+      color: $amazon;
+      overflow: hidden;
+      margin-bottom: 10px;
+      padding-top: 5px;
+    }
+
+    &--twitter {
+      text-decoration: none;
+      color: $color-white;
+      font-size: rem(14);
+      background-color: #00a0f5; 
+      font-family: $font-family-opensans;
+      width: 170px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 3px;
+      margin-bottom: 20px;
+
+      &--icon {
+        padding-right: 7px;
+        position: relative;
+        top: 1.5px;
+        font-size: rem(18);
+      }
+    }
+  }
+}
+
+.button-disabled {
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+  color: $color-white;
+  background-color: $color-button-disabled;
+  cursor: default;
+}
+
+.hidden{
+  display: none;
+}

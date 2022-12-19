@@ -1,0 +1,46 @@
+@mixin footer-common {
+  background-color: $color-white;
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-top: solid 1px $amazon;
+
+  @media all and (min-width: 768px) {
+    height: 9vh;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__paragraph {
+    color: $amazon;
+    opacity: 0.5;
+    font-family: $font-family-opensans;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 18px;
+
+    @media all and (min-width: 768px) {
+      margin: 18px 0px 22px 41px;
+    }
+  }
+
+  &__img {
+    width: 103px;
+    height: 40px;
+    margin: 12px 0px 20px 0px;
+
+    @media all and (min-width: 768px) {
+      margin: 10px 41px 10px 0px;
+    }
+  }
+}
+
+.footer__index {
+  @include footer-common;
+}
+
+.footer {
+  @include footer-common;
+}

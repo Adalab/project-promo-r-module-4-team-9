@@ -1,0 +1,200 @@
+/*PALETAS*/
+.palette-1 {
+  .image {
+    background-image: url(../../images/beemo-profile-2.png);
+  }
+
+  .profile {
+    background-color: $color-dirty-blue;
+
+    &__name {
+      color: $color-dark-green;
+    }
+  }
+
+  .nav {
+    &__li {
+      border: solid 2px $color-hospital-green;
+    }
+
+    &__icon {
+      color: $color-dark-green;
+    }
+  }
+}
+
+.palette-2 {
+  .image {
+    background-image: url(../../images/marceline-profile-2.png);
+  }
+
+  .profile {
+    background-color: $color-rusty-red;
+
+    &__name {
+      color: $color-dried-blood;
+    }
+  }
+
+  .nav {
+    &__li {
+      border: solid 2px $color-tomato;
+    }
+
+    &__icon {
+      color: $color-dried-blood;
+    }
+  }
+}
+
+.palette-3 {
+  .image {
+    background-image: url(../../images/jake-profile-2.png);
+  }
+
+  .profile {
+    background-color: $color-faded-orange;
+
+    &__name {
+      color: $color-slate;
+    }
+  }
+
+  .nav {
+    &__li {
+      border: solid 2px $color-light-grey-blue;
+    }
+
+    &__icon {
+      color: $color-slate;
+    }
+  }
+}
+
+/*PALETAS*/
+
+.card {
+  min-height: 457px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(1, 1, 1, 0.1),
+    rgba(1, 1, 1, 0.3)
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media all and (min-width: 768px) {
+      border-radius: 6px;
+      margin-right: 20px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      flex-grow: 3;
+  }
+  &__wrap {
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &__button {
+    height: 30px;
+    margin-bottom: 26px;
+    padding: 4px 12px 6px 10px;
+    border-radius: 15px;
+    border: solid 1px $amazon;
+    font-weight: 700;
+    color: $color-white;
+    background-color: $amazon;
+    font-size: 11px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 1s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &__reset__icon {
+      padding-right: 5px;
+    }
+  }
+
+  &__article {
+    width: 240px;
+    background-image: none;
+    background-color: $color-white;
+    padding: 21px 0 12px;
+    border-radius: 2px;
+    box-shadow: $purple-shadow 0px 54px 55px, $purple-shadow 0px -12px 30px,
+      $purple-shadow 0px 4px 6px, $purple-shadow 0px 12px 13px,
+      $purple-shadow 0px -3px 5px;
+  }
+}
+
+.profile {
+  width: 5px;
+  min-height: 42px;
+  margin: 2px 15px 10px 0;
+
+  &__name {
+    font-size: 18px;
+    width: 206px;
+    min-height: 20px;
+    margin: 0 14px 4px 15px;
+    font-family: $font-family-montserrat;
+    font-weight: bold;
+    text-transform: capitalize;
+    word-wrap: break-word;
+  }
+
+  &__text {
+    font-size: 16px;
+    color: $color-gunmetal;
+    width: 168px;
+    min-height: 20px;
+    margin: 4px 52px 10px 15px;
+    font-family: $font-family-montserrat;
+    line-height: 1.25;
+    text-transform: capitalize;
+    word-wrap: break-word;
+  }
+}
+
+.image {
+  width: 240px;
+  height: 200px;
+  margin: 10px 0;
+  background-size: cover;
+}
+
+.nav {
+  margin-left: 20px;
+
+  &__ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__li {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
+
