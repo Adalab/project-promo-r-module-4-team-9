@@ -10,3 +10,5 @@ const dataApi = (data) => {
     });
 };
 export default dataApi;
+
+//Crear un fetch GET cuando el usuario hace click en la URL para que nos devuelva el HTML

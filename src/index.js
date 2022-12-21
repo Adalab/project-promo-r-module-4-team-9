@@ -17,14 +17,41 @@ server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
+const savedCards = [];
+console.log(savedCards)
 // Escribimos los endpoints que queramos
+//Endpoint crear tarjeta
 server.post('/card', (req, res) => {
-  //req.body
-  const responseSuccess = {
-    cardURL: 'https://dev.adalab.es/card/16715375682998012',
-    success: true,
-  };
-  console.log(responseSuccess);
-  console.log(req.body);
-  res.json(responseSuccess);
+  //
+  if(req.body.palette === '' || req.body.name === '' || req.body.job === '' || req.body.phone === '' || req.body.email === '' || req.body.linkedin === '' || req.body.github === '' || req.body.photo === ''){
+    const responseError = {
+      error: "Faltan datos",
+      success: false,
+    }
+    res.json(responseError);
+  }else{
+    const uniq = 'id' + (new Date()).getTime();
+    const newCard = {id: uniq, ...req.body};
+    savedCards.push(newCard);
+    const responseSuccess = {
+      cardURL: `https://localhost:4000/card/${newCard.id}`,
+      success: true,
+    };
+    res.json(responseSuccess);
+  }
 });
+
+//Petición para pintar la tarjeta 
+server.get('/card/:id', (req, res) =>{
+  //Nos devuelve el id del objeto con la URL
+  console.log(req.params.id)
+  //Hasta que no guardemos saveCards en una base de datos, cada vez que refrescamos o hacemos un cambio en el archivo se vacía
+  savedCards.find((card) => card.id === req.params.id);
+  //Motor plantillas
+  const htmlCode = "<div>Hola</div>"
+  res.send(htmlCode);
+})
+
+//Crear servidor de estáticos
+const staticServer = './src/public-react';
+server.use(express.static(staticServer));
