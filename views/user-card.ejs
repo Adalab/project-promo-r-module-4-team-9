@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather&amp;family=Montserrat:wght@400;700&amp;family=Open+Sans:wght@400;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="/favicon.ico">
+</head>
+
+<body>
+    <main class="main">
+        <section class="js-card card">
+            <article class="js-card__article card__article palette-<%= palette %>">
+                <div class="js-profile profile">
+                    <h1 class="js-profile__name profile__name">
+                        <%= name %>
+                    </h1>
+                    <p class="js-profile__text profile__text">
+                        <%= job %>
+                    </p>
+                </div>
+                <div class="js__profile-image js-image image" style="background-image: url('<%= photo %>');"></div>
+                <nav class="js-nav nav">
+                    <ul class="js-nav__ul nav__ul">
+                        <li class="js-nav__li1 nav__li"><a href="<%= phone %>" target="_blank"
+                                class="js-nav__mobile nav__icon"><i class="fa-solid fa-mobile-screen-button"></i></a>
+                        </li>
+                        <li class="js-nav__li2 nav__li"><a href="<%= email %>" target="_blank"
+                                class="js-nav__mail nav__icon"><i class="fa-regular fa-envelope"></i></a></li>
+                        <li class="js-nav__li3 nav__li"><a href="<%= linkedin %>" target="_blank"
+                                class="js-nav__linkedin nav__icon"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        <li class="js-nav__li4 nav__li"><a href="<%= github %>" target="_blank"
+                                class="js-nav__github nav__icon"><i class="fa-brands fa-github-alt"></i></a></li>
+                    </ul>
+                </nav>
+            </article>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
