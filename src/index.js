@@ -43,9 +43,6 @@ server.post('/card', (req, res) => {
     };
     res.json(responseError);
   } else {
-    // const uniq = 'id' + new Date().getTime();
-    // const newCard = { id: uniq, ...req.body };
-
     const query = db.prepare(
       'INSERT INTO cards(palette, name, job, phone, email, linkedin, github, photo) VALUES(?, ?, ?, ?, ?, ?, ?, ?)'
     );
