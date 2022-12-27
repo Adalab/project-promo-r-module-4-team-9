@@ -3,6 +3,7 @@
 // Importamos los dos módulos de NPM necesarios para trabajar
 const express = require('express');
 const cors = require('cors');
+const Database = require('better-sqlite3');
 
 // Creamos el servidor
 const server = express();
@@ -18,7 +19,10 @@ server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
-const savedCards = [];
+// const savedCards = [];
+const db = new Database('./src/database.db', {
+  verbose: console.log,
+});
 // Escribimos los endpoints que queramos
 //Endpoint crear tarjeta
 server.post('/card', (req, res) => {
@@ -39,11 +43,26 @@ server.post('/card', (req, res) => {
     };
     res.json(responseError);
   } else {
-    const uniq = 'id' + new Date().getTime();
-    const newCard = { id: uniq, ...req.body };
-    savedCards.push(newCard);
+    // const uniq = 'id' + new Date().getTime();
+    // const newCard = { id: uniq, ...req.body };
+
+    const query = db.prepare(
+      'INSERT INTO cards(palette, name, job, phone, email, linkedin, github, photo) VALUES(?, ?, ?, ?, ?, ?, ?, ?)'
+    );
+    const resultCards = query.run(
+      req.body.palette,
+      req.body.name,
+      req.body.job,
+      req.body.phone,
+      req.body.email,
+      req.body.linkedin,
+      req.body.github,
+      req.body.photo
+    );
+    console.log(resultCards);
+    // savedCards.push(newCard);
     const responseSuccess = {
-      cardURL: `http://localhost:4000/card/${newCard.id}`,
+      cardURL: `http://localhost:4000/card/${resultCards.lastInsertRowid}`,
       success: true,
     };
     res.json(responseSuccess);
@@ -52,23 +71,10 @@ server.post('/card', (req, res) => {
 
 //Petición para pintar la tarjeta
 server.get('/card/:id', (req, res) => {
-  //Nos devuelve el id del objeto con la URL
-  console.log(req.params.id);
-  const userCardObject = {
-    palette: '3',
-    name: 'Pepa',
-    job: 'Cake Developer',
-    phone: '123456789',
-    email: 'pepa@cakes.com',
-    linkedin: 'https://www.linkedin.com/in/pepa-sastre-0675222/',
-    github: 'https://www.linkedin.com/in/pepa-sastre-0675222/',
-    photo: 'https://es.web.img2.acsta.net/pictures/14/02/27/12/49/374639.jpg',
-  };
-
-  //Hasta que no guardemos saveCards en una base de datos, cada vez que refrescamos o hacemos un cambio en el archivo se vacía
-  savedCards.find((card) => card.id === req.params.id);
+  const query = db.prepare('SELECT * FROM cards WHERE id = ?');
+  const resultSelectedCard = query.get(req.params.id);
   //Motor plantillas
-  res.render('user-card', userCardObject);
+  res.render('user-card', resultSelectedCard);
 });
 
 //Crear servidor de estáticos

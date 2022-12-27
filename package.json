@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Adalab/project-promo-r-module-4-team-9#readme",
   "dependencies": {
+    "better-sqlite3": "^8.0.1",
     "cors": "^2.8.5",
     "ejs": "^3.1.8",
     "express": "^4.18.2"
