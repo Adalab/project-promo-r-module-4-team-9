@@ -10,7 +10,7 @@ const server = express();
 
 // Configuramos el servidor
 server.use(cors()); //sirve para poder acceder desde cualquien navegador
-server.use(express.json());
+server.use(express.json({limit: '25mb'}));
 server.set('view engine', 'ejs');
 
 // Arrancamos el servidor en el puerto 4000
