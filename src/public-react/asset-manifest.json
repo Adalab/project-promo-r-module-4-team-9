@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.318f5741.css",
-    "main.js": "./static/js/main.879a69fb.js",
+    "main.css": "./static/css/main.47909a95.css",
+    "main.js": "./static/js/main.f78c8a0a.js",
     "static/media/logo-coding-time-2.png": "./static/media/logo-coding-time-2.148d4f9b81af2000a37f.png",
     "static/media/background-3.jpg": "./static/media/background-3.410ec7ca4aa693eef829.jpg",
     "static/media/Thunderman.ttf": "./static/media/Thunderman.6e86eb5a76f838564cd1.ttf",
@@ -9,11 +9,11 @@
     "static/media/marceline-profile-2.png": "./static/media/marceline-profile-2.7712194687fa7a7f7ddc.png",
     "static/media/beemo-profile-2.png": "./static/media/beemo-profile-2.fab9e0764b93f445bf4b.png",
     "index.html": "./index.html",
-    "main.318f5741.css.map": "./static/css/main.318f5741.css.map",
-    "main.879a69fb.js.map": "./static/js/main.879a69fb.js.map"
+    "main.47909a95.css.map": "./static/css/main.47909a95.css.map",
+    "main.f78c8a0a.js.map": "./static/js/main.f78c8a0a.js.map"
   },
   "entrypoints": [
-    "static/css/main.318f5741.css",
-    "static/js/main.879a69fb.js"
+    "static/css/main.47909a95.css",
+    "static/js/main.f78c8a0a.js"
   ]
 }
