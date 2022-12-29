@@ -40,9 +40,7 @@ function Share(props) {
             href={props.dataResult.success ? props.dataResult.cardURL : '#'}
             target="_blank"
           >
-            {props.dataResult.success
-              ? props.dataResult.cardURL
-              : props.dataResult.error}
+          Ver tarjeta  
           </a>
           <a
             className="share__wrap3--twitter twitter-share-button js-twitter-share-button"

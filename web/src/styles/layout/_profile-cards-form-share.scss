@@ -31,6 +31,9 @@
     width: 100%;
 
     &--button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-size: 14px;
       text-transform: uppercase;
       font-family: $font-family-opensans;
@@ -72,14 +75,18 @@
     }
 
     &--link {
+      text-decoration: none;
+      color: $color-white;
+      font-size: rem(14);
+      background-color: $amazon; 
       font-family: $font-family-opensans;
-      font-weight: 700;
+      width: 170px;
+      height: 30px;
       text-align: center;
-      font-size: rem(12);
-      color: $amazon;
-      overflow: hidden;
-      margin-bottom: 10px;
-      padding-top: 5px;
+      line-height: 30px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      margin-top: 20px;
     }
 
     &--twitter {
