@@ -16,7 +16,6 @@ server.set('view engine', 'ejs');
 // Arrancamos el servidor en el puerto 4000
 
 const serverPort = process.env.PORT || 4000;
-console.log(process.env);
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
@@ -28,7 +27,7 @@ const db = new Database('./src/database.db', {
 // Escribimos los endpoints que queramos
 //Endpoint crear tarjeta
 server.post('/card', (req, res) => {
-  //
+  
   if (
     req.body.palette === '' ||
     req.body.name === '' ||
@@ -61,7 +60,7 @@ server.post('/card', (req, res) => {
     console.log(resultCards);
     // savedCards.push(newCard);
     const responseSuccess = {
-      cardURL: `http://localhost:4000/card/${resultCards.lastInsertRowid}`,
+      cardURL: `/card/${resultCards.lastInsertRowid}`,
       success: true,
     };
     res.json(responseSuccess);
