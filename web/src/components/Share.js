@@ -46,7 +46,7 @@ function Share(props) {
           </a>
           <a
             className="share__wrap3--twitter twitter-share-button js-twitter-share-button"
-            href={`https://twitter.com/intent/tweet?text=¡Mirad%20mi%20nueva%20tarjeta!%20&hashtags=CodingTime,Adalab,PromoRadia&url=${props.dataResult.success}`}
+            href={`https://twitter.com/intent/tweet?text=¡Mirad%20mi%20nueva%20tarjeta!%20&hashtags=CodingTime,Adalab,PromoRadia&url=${props.dataResult.cardURL}`}
             data-size="large"
             target="_blank"
           >
